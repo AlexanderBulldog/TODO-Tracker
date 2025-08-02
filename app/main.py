@@ -101,3 +101,8 @@ def read_task_api(task_id: int, db: Session = Depends(get_db)):
     if db_task is None:
         raise HTTPException(status_code=404, detail="Task not found")
     return db_task
+
+
+@app.get("/health")
+def health_check():
+    return {"status": "ok"}
