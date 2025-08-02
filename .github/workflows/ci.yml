@@ -29,10 +29,10 @@ jobs:
           ruff format --check .
 
       - name: Run tests with Pytest
-        run: pytest
+        run: PYTHONPATH=. pytest
 
   build-docker:
-    needs: lint-and-test # Запускать только после успешных тестов
+    needs: lint-and-test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -47,5 +47,5 @@ jobs:
       - name: Run container and perform healthcheck
         run: |
           docker run -d --name myapp -p 8000:8000 todo-app
-          sleep 5 # Даём время серверу запуститься
+          sleep 5
           curl -f http://localhost:8000/health
