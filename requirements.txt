@@ -4,3 +4,6 @@ sqlalchemy
 pydantic
 jinja2
 python-multipart
+ruff
+pytest 
+httpx
