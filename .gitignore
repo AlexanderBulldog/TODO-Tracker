@@ -1,0 +1,23 @@
+# Виртуальное окружение
+venv/
+.venv/
+env/
+.env
+
+# Файлы базы данных SQLite
+*.db
+*.db-journal
+
+# Кэш и скомпилированные файлы Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Папки IDE
+.idea/
+.vscode/
+
+# Файлы pytest
+.pytest_cache/
+.coverage
